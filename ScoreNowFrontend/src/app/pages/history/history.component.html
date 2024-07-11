@@ -1,0 +1,15 @@
+<div>
+    <h1 class="text-4xl font-extrabold text-gray-800" >Match History</h1>
+<div class="items-stretch card-container flex-col md:flex-wrap">
+  <div class="flex flex-wrap">
+    <ng-container *ngIf="allMatch && allMatch.length > 0; else noMatches">
+      <div *ngFor="let match of allMatch; let i = index" class="m-2 w-full md:w-1/4">
+        <app-match-card [match]="match"></app-match-card>
+      </div>
+    </ng-container>
+  </div>
+  
+  <ng-template #noMatches>
+    <div class="text-center w-full mt-4">No History of Matches</div>
+  </ng-template>      
+</div>
